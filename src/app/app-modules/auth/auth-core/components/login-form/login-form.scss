@@ -1,0 +1,47 @@
+
+.login-form-container {
+
+  .login-form-header {
+
+    &__logo {
+
+    }
+
+    &__text {
+
+    }
+
+    &__description {
+
+    }
+  }
+
+  .login-form-body {
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 16px;
+      width: 400px;
+
+      &__login-field {
+        width: 100%;
+      }
+
+      &__password-feild {
+        width: 100%;
+      }
+
+      .submit-button {
+        align-self: center;
+        width: 120px;
+      }
+    }
+  }
+
+  .login-form-footer {
+
+  }
+}

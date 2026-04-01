@@ -9,8 +9,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./app-modules/auth/auth-routing.module').then(({ AuthRoutingModule }) => AuthRoutingModule)
-  }
+    loadChildren: () =>
+      import('./app-modules/auth/auth-core/auth.module').then(({ AuthModule }) => AuthModule),
+  },
 ];
 
 @NgModule({

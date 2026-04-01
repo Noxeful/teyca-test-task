@@ -1,0 +1,46 @@
+<div class="login-form-container">
+
+  <div class="login-form-header">
+    <div class="login-form-header__logo">
+
+    </div>
+
+    <div class="login-form-header__text">
+
+    </div>
+
+    <div class="login-form-header__description">
+
+    </div>
+  </div>
+
+  <div class="login-form-body">
+    <form class="login-form" [formGroup]="loginForm" >
+      <mat-form-field class="login-form__login-field">
+        <input matInput formControlName="login" name="login" placeholder="Номер телефона / Адрес эл. почты" />
+        @if (loginControl?.invalid && loginControl?.touched) {
+          <mat-error>
+            Поле обязательно для заполнения
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="login-form__password-field">
+        <input matInput formControlName="password" name="password" type="password" placeholder="Введите пароль" />
+        @if (passwordControl?.invalid && passwordControl?.touched) {
+          <mat-error>
+            Поле обязательно для заполнения
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <button mat-button color="primary" class="submit-button" type="button" (click)="onSubmit()">
+        Войти
+      </button>
+    </form>
+  </div>
+
+  <div class="login-form-footer">
+
+  </div>
+</div>

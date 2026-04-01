@@ -1,2 +1,21 @@
 <p>login-container works!</p>
-<button mat-button color="primary">123</button>
+
+<login-form (submitFormEvent)="onSubmit($event)"></login-form>
+
+<div>
+  <div class="header">
+    header
+  </div>
+
+  <div class="token">
+    {{ authStore.token() }}
+  </div>
+
+  <div class="error">
+    {{ authStore.error() }}
+  </div>
+
+  <div class="loading">
+    {{ authStore.loading() }}
+  </div>
+</div>
