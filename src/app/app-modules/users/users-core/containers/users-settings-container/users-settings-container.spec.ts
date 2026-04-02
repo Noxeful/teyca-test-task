@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginForm } from './login-form';
+import { UsersSettingsContainer } from './users-settings-container';
 
-describe('LoginForm', () => {
-  let component: LoginForm;
-  let fixture: ComponentFixture<LoginForm>;
+describe('UsersSettingsContainer', () => {
+  let component: UsersSettingsContainer;
+  let fixture: ComponentFixture<UsersSettingsContainer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoginForm],
+      declarations: [UsersSettingsContainer],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LoginForm);
+    fixture = TestBed.createComponent(UsersSettingsContainer);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

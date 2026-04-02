@@ -4,12 +4,12 @@ import { AuthDTO } from '@auth/auth-core/models/auth-state-models';
 
 @Component({
   selector: 'login-form',
-  templateUrl: './login-form.html',
-  styleUrl: './login-form.scss',
+  templateUrl: './login-form.component.html',
+  styleUrl: './login-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
-export class LoginForm implements OnInit {
+export class LoginFormComponent implements OnInit {
   public submitFormEvent: OutputEmitterRef<AuthDTO> = output<{
     login: string;
     password: string;

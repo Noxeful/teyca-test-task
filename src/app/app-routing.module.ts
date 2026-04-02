@@ -12,6 +12,11 @@ const appRoutes: Routes = [
     loadChildren: () =>
       import('./app-modules/auth/auth-core/auth.module').then(({ AuthModule }) => AuthModule),
   },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./app-modules/users/users-core/users.module').then(({ UsersModule }) => UsersModule),
+  },
 ];
 
 @NgModule({

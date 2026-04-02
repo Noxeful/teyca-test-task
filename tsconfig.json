@@ -18,6 +18,8 @@
     "paths": {
       "@auth/*": ["app/app-modules/auth/*"],
       "@shared/*": ["app/app-modules/shared/*"],
+      "@users/*": ["app/app-modules/users/*"],
+      "@material/*": ["app/app-modules/material/*"],
     },
   },
   "angularCompilerOptions": {

@@ -1,7 +1,7 @@
-import { LoginForm } from '@auth/auth-core/components/login-form/login-form';
+import { LoginFormComponent } from '@auth/auth-core/components/login-form/login-form.component';
 
 export const components = [
-  LoginForm
+  LoginFormComponent
 ];
 
-export * from '@auth/auth-core/components/login-form/login-form';
+export * from '@auth/auth-core/components/login-form/login-form.component';
