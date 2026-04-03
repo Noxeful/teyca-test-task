@@ -1,0 +1,27 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+.promotion-item {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+
+  &__logo {
+    width: 20px;
+    height: 20px;
+
+    .mat-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__text {
+    @include typography.f14w700;
+    line-height: 135%;
+    color: colors.$black-1;
+  }
+}

@@ -1,0 +1,60 @@
+.mat-mdc-form-field {
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    display: none !important;
+  }
+
+  .mdc-line-ripple::before,
+  .mdc-line-ripple::after {
+    border-bottom:1px solid #999999 !important;
+  }
+
+  .mdc-line-ripple--active::before,
+  .mdc-line-ripple--active::after {
+      border-bottom-color: #1F1F1F !important;
+  }
+
+  .mat-mdc-form-field-flex {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 0 12px;
+    transition: background-color 0.2s ease;
+  }
+
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #ffffff;
+    padding: 0;
+  }
+
+  .mat-mdc-form-field-infix {
+    padding: 12px 0;
+    border-top: none;
+  }
+
+  input.mat-mdc-input-element {
+    color: #1F1F1F !important;
+    caret-color: #1F1F1F;
+
+    &::placeholder {
+      color: #999999 !important;
+      padding: 0;
+    }
+  }
+}
+
+.mat-mdc-text-field-wrapper {
+  height: 49px !important;
+  padding: 0;
+
+  .mat-mdc-form-field-flex {
+    height: 49px !important;
+    padding: 0;
+
+    .mat-mdc-form-field-infix {
+      height: 49px !important;
+      box-sizing: border-box;
+      max-height: 49px !important;
+    }
+  }
+}

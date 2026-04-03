@@ -1,0 +1,76 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+.login-container {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
+  background: #ffffff;
+
+  &__form {
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__ads-block {
+    background: url('assets/images/loyalty-program-image.png') center/auto no-repeat,
+    #F3F3F1 linear-gradient(to left, #FFFFFF, #FFFFFF00);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+
+    .ads-header-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .first-word {
+        @include typography.f30w400;
+        color: colors.$black-1;
+      }
+
+      .second-word {
+        @include typography.f30w700;
+        color: colors.$black-1;
+      }
+
+    }
+
+    .ads-footer-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+
+      .ads-promotion-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 9px;
+      }
+
+      .ads-arrows-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+      }
+    }
+  }
+}

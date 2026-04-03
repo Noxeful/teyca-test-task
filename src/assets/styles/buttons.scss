@@ -1,0 +1,54 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+.submit-button {
+  background-color: #1F1F1F !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  border-radius: 4px !important;
+  padding: 12px 24px !important;
+  transition: background-color 0.2s ease !important;
+  width: 100% !important;
+  min-height: 46px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+
+
+  &:hover:not(:disabled) {
+    background-color: #4d4d4d !important;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #1a1a1a !important;
+  }
+
+  &:disabled {
+    //background-color: #1f1f1f !important;
+    //color: #777777 !important;
+  }
+}
+
+button.custom-nav-button {
+  background-color: colors.$black-primary;
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+
+  .mat-icon {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+button.custom-nav-button.mat-mdc-button-disabled {
+  background-color: transparent;
+  color: colors.$gray-primary;
+  fill: colors.$gray-primary;
+}
+
+button.custom-nav-button .mat-icon svg {
+  fill: #ffffff;
+}

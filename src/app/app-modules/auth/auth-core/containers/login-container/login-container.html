@@ -1,21 +1,37 @@
-<p>login-container works!</p>
+<div class="login-container">
 
-<login-form (submitFormEvent)="onSubmit($event)"></login-form>
-
-<div>
-  <div class="header">
-    header
+  <div class="login-container__form">
+    <login-form (submitFormEvent)="onSubmit($event)"></login-form>
   </div>
 
-  <div class="token">
-    {{ authStore.token() }}
-  </div>
+  <div class="login-container__ads-block">
 
-  <div class="error">
-    {{ authStore.error() }}
-  </div>
+    <div class="ads-header-block">
+      <div class="first-word">
+        Программа
+      </div>
+      <div class="second-word">
+        лояльности
+      </div>
+    </div>
 
-  <div class="loading">
-    {{ authStore.loading() }}
+    <div class="ads-footer-block">
+
+      <div class="ads-promotion-block">
+          @for (item of promotionItems; track $index) {
+            <promotion-block-item [iconName]="item.iconName" [text]="item.text"></promotion-block-item>
+          }
+      </div>
+
+      <div class="ads-arrows-block">
+        <button mat-icon-button class="custom-nav-button" aria-label="Previous" disabled>
+          <mat-icon svgIcon="chevronLeft"></mat-icon>
+        </button>
+
+        <button mat-icon-button class="custom-nav-button" aria-label="Next">
+          <mat-icon svgIcon="chevronRight"></mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
 </div>

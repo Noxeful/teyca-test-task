@@ -1,11 +1,13 @@
 // global styles and imports only
 
 @use 'assets/styles/reset' as *;
+@use '@angular/material' as mat;
+@use 'assets/styles/tables' as *;
+@use 'assets/styles/forms' as *;
+@use 'assets/styles/buttons' as *;
+@use 'assets/styles/shared-classes' as *;
 
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 
 
@@ -14,7 +16,6 @@
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
 
 html {
   height: 100%;
@@ -34,7 +35,7 @@ body {
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
   // user's system settings.
-  color-scheme: light;
+  color-scheme: dark;
 
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
@@ -46,4 +47,9 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100%;
+}
+
+
+* {
+  font-family: 'Manrope', sans-serif;
 }

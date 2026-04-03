@@ -2,22 +2,22 @@
 
   <div class="login-form-header">
     <div class="login-form-header__logo">
-
+      <mat-icon svgIcon="teycaLogo"></mat-icon>
     </div>
 
-    <div class="login-form-header__text">
-
+    <div class="login-form-header__text header-text">
+      Добро пожаловать в Тейка
     </div>
 
-    <div class="login-form-header__description">
-
+    <div class="login-form-header__description header-text">
+      Начните сегодня
     </div>
   </div>
 
   <div class="login-form-body">
     <form class="login-form" [formGroup]="loginForm" >
       <mat-form-field class="login-form__login-field">
-        <input matInput formControlName="login" name="login" placeholder="Номер телефона / Адрес эл. почты" />
+        <input matInput formControlName="login" name="login" type="text" placeholder="Номер телефона / Адрес эл. почты" />
         @if (loginControl?.invalid && loginControl?.touched) {
           <mat-error>
             Поле обязательно для заполнения
@@ -25,7 +25,7 @@
         }
       </mat-form-field>
 
-      <mat-form-field appearance="outline" class="login-form__password-field">
+      <mat-form-field class="login-form__password-field">
         <input matInput formControlName="password" name="password" type="password" placeholder="Введите пароль" />
         @if (passwordControl?.invalid && passwordControl?.touched) {
           <mat-error>
@@ -42,5 +42,17 @@
 
   <div class="login-form-footer">
 
+    <div class="footer-divider">
+      ИЛИ
+    </div>
+
+    <div class="footer-info">
+      <div class="footer-info__text">
+        Уже есть аккаунт?
+      </div>
+      <div class="footer-info__link link">
+        Зарегистрироваться
+      </div>
+    </div>
   </div>
 </div>

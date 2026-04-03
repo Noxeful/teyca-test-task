@@ -1,22 +1,42 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
 
 .login-form-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
   .login-form-header {
 
     &__logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 45px auto;
 
+      .mat-icon {
+        width: 64px;
+        height: 64px;
+      }
     }
 
     &__text {
-
+      color: colors.$black-primary;
+      text-wrap-mode: nowrap;
     }
 
     &__description {
+      color: colors.$gray-1;
+    }
 
+    .header-text {
+      @include typography.f30w800;
     }
   }
 
   .login-form-body {
+    margin-top: 55px;
 
     .login-form {
       display: flex;
@@ -30,7 +50,7 @@
         width: 100%;
       }
 
-      &__password-feild {
+      &__password-field {
         width: 100%;
       }
 
@@ -42,6 +62,57 @@
   }
 
   .login-form-footer {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 
+    .footer-divider {
+      @include typography.f14w700;
+      color: colors.$gray-primary;
+      height: 46px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+
+      &::before,
+      &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: colors.$gray-primary;
+      }
+
+      &::before {
+        margin-right: 20px;
+      }
+      &::after {
+        margin-left: 20px;
+      }
+    }
+
+    .footer-info {
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      &__text {
+        @include typography.f14w500;
+        color: colors.$black-primary;
+      }
+
+      &__link {
+        @include typography.f14w500;
+      }
+    }
   }
 }
