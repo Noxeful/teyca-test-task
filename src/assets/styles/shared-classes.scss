@@ -1,3 +1,5 @@
+@use "assets/styles/mixins/colors" as colors;
+
 .link {
   color: #1D72FF;
   transition: 0.2s ease;
@@ -5,4 +7,12 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.teyca-mat-table-container {
+  flex: 1 1 auto;
+  overflow: auto;
+  box-shadow: 0 0 20px 0 #00000014;
+  padding-bottom: 45px;
+  border-bottom: 1px solid colors.$gray-2;
 }

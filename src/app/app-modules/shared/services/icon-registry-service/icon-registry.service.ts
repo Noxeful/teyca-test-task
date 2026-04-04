@@ -15,6 +15,11 @@ export class IconRegistryService {
     { name: 'ping', path: 'assets/icons/promotion-logos/ping.svg' },
     { name: 'chevronLeft', path: 'assets/icons/chevrons/chevron-left.svg' },
     { name: 'chevronRight', path: 'assets/icons/chevrons/chevron-right.svg' },
+    { name: 'knowledge', path: 'assets/icons/clients/knowledge.svg' },
+    { name: 'apple', path: 'assets/icons/clients/apple.svg' },
+    { name: 'download', path: 'assets/icons/clients/download.svg' },
+    { name: 'push', path: 'assets/icons/clients/push.svg' },
+    { name: 'telegram', path: 'assets/icons/clients/telegram.svg' },
   ];
 
   constructor(

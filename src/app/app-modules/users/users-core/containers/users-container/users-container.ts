@@ -10,8 +10,9 @@ import { AuthStore } from '@auth/auth-store/auth-store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersContainer {
-  public links: UserContainerLink[];
   readonly authStore = inject(AuthStore);
+
+  public links: UserContainerLink[];
 
   constructor() {
     this.links = [

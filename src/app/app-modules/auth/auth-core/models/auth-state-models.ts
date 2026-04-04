@@ -3,6 +3,7 @@ export interface AuthStateModel {
   error: string | null;
   loading: boolean;
   userName: string | null;
+  role: string | null;
 }
 
 export interface AuthDTO {

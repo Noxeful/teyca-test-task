@@ -1,19 +1,20 @@
 @use "assets/styles/mixins/typography" as typography;
 @use "assets/styles/mixins/colors" as colors;
 
-.submit-button {
-  background-color: #1F1F1F !important;
+button.mdc-button.mat-mdc-button-base.mat-primary {
+  background-color: colors.$black-primary !important;
   color: #ffffff !important;
   fill: #ffffff !important;
   border-radius: 4px !important;
-  padding: 12px 24px !important;
+  box-sizing: border-box;
+  padding: 10px 24px;
   transition: background-color 0.2s ease !important;
-  width: 100% !important;
+  min-width: 60px;
   min-height: 46px;
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 
 
   &:hover:not(:disabled) {
@@ -25,8 +26,36 @@
   }
 
   &:disabled {
-    //background-color: #1f1f1f !important;
-    //color: #777777 !important;
+
+  }
+}
+
+button.mdc-button.mat-mdc-button-base.mat-accent {
+  background-color: colors.$gray-3 !important;
+  color: colors.$black-primary !important;
+  fill: colors.$black-primary !important;
+  border-radius: 4px !important;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  transition: background-color 0.2s ease !important;
+  min-width: 60px;
+  min-height: 46px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+
+  &:hover:not(:disabled) {
+    background-color: colors.$gray-1 !important;
+  }
+
+  &:active:not(:disabled) {
+    background-color: colors.$gray-primary !important;
+  }
+
+  &:disabled {
+
   }
 }
 

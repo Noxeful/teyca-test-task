@@ -1,0 +1,61 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+nav.mat-mdc-tab-nav-bar {
+  height: 60px;
+  transition: 0.5s ease;
+
+  .mat-mdc-tab-link-container {
+    border-bottom: 1px solid colors.$gray-2;
+
+    .mat-mdc-tab-list {
+      display: flex;
+      flex-direction: row;
+
+      .mat-mdc-tab-links {
+        justify-content: flex-start;
+        align-items: center;
+
+        a.mat-mdc-tab-link {
+          box-sizing: border-box;
+          padding: 0 20px;
+          height: 30px;
+
+          .mdc-tab__content {
+
+            .mdc-tab__text-label {
+
+              .tab-label-badge {
+                @include typography.f14w700;
+                color: colors.$gray-primary;
+              }
+            }
+          }
+        }
+
+        a.mat-mdc-tab-link.mdc-tab--active.mdc-tab-indicator--active {
+
+          .mdc-tab__content {
+
+            .mdc-tab__text-label {
+
+              .tab-label-badge {
+                @include typography.f14w700;
+                color: colors.$black-primary
+              }
+            }
+          }
+
+          .mdc-tab-indicator {
+            border-radius: 8px;
+            background: colors.$gray-3;
+
+            .mdc-tab-indicator__content.mdc-tab-indicator__content--underline {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

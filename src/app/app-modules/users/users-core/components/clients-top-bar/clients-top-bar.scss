@@ -1,0 +1,85 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+.top-bar-container {
+  min-height: 60px;
+  height: 60px;
+  max-height: 60px;
+  border-bottom: 1px solid colors.$gray-2;
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  .top-bar-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+
+    .knowledge-base {
+      height: 38px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 5px;
+      box-sizing: border-box;
+      padding: 7px 12px;
+
+      &__icon {
+        width: 24px;
+        height: 24px;
+
+        .mat-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &__text {
+        @include typography.f14w600;
+        color: colors.$black-primary;
+      }
+    }
+
+    .current-user {
+      height: 38px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+
+      .current-user-logo {
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+        background: colors.$green-primary;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .current-user-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6px;
+
+        &__name {
+          @include typography.f12w700;
+          color: colors.$black-primary;
+        }
+
+        &__role {
+          @include typography.f11w600;
+          color: colors.$gray-primary;
+        }
+      }
+    }
+  }
+}

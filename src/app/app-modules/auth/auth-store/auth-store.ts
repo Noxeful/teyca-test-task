@@ -12,6 +12,7 @@ const initialState: AuthStateModel = {
   error: null,
   loading: false,
   userName: null,
+  role: null,
 };
 
 
@@ -22,8 +23,9 @@ export const AuthStore = signalStore(
       const localStorageService = inject(LocalStorageService);
       const token = localStorageService.getItem('auth_token');
       const userName = localStorageService.getItem('user_name');
+      const role = localStorageService.getItem('role');
       if (token && userName) {
-        patchState(store, { token, userName });
+        patchState(store, { token, userName, role });
       }
     },
   }),
@@ -40,6 +42,7 @@ export const AuthStore = signalStore(
                   patchState(store, { token: data.auth_token, loading: false, userName: login });
                   localStorageService.setItem('auth_token', data.auth_token);
                   localStorageService.setItem('user_name', login);
+                  localStorageService.setItem('role', 'Администратор');
                   router.navigate(['users', 'clients']).then();
                 },
                 error: (error) => {

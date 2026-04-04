@@ -1,0 +1,30 @@
+<div class="top-bar-container">
+
+  <div class="top-bar-body">
+
+    <div class="knowledge-base">
+      <div class="knowledge-base__icon">
+        <mat-icon svgIcon="knowledge"></mat-icon>
+      </div>
+      <div class="knowledge-base__text">
+        База знаний
+      </div>
+    </div>
+
+    <div class="current-user">
+      <div class="current-user-logo">
+        {{ logoSymbol }}
+      </div>
+
+      <div class="current-user-body">
+        <div class="current-user-body__name">
+          {{ userName() }}
+        </div>
+
+        <div class="current-user-body__role">
+          {{ role() }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

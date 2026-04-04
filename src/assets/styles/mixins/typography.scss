@@ -1,5 +1,39 @@
+//font size 11px
+
+@mixin f11w600 {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+//font size 12px
+
+@mixin f12w700 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+@mixin f12w500 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 110%;
+  letter-spacing: 0;
+}
+
+
 //font size 14px
 
+@mixin f14w400 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
 
 @mixin f14w500 {
   font-weight: 500;
@@ -9,10 +43,28 @@
   text-align: center;
 }
 
+@mixin f14w600 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
 @mixin f14w700 {
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+//font size 26px
+
+@mixin f26w700 {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 125%;
   letter-spacing: 0;
   text-align: center;
 }

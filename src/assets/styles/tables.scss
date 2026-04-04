@@ -1,0 +1,111 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+table.mat-mdc-table {
+  background: #ffffff;
+  color: #000000;
+
+  tr.mat-mdc-header-row {
+    height: 52px;
+  }
+
+  tr.mat-mdc-row {
+    height: 52px;
+  }
+
+  th.mat-mdc-header-cell {
+    @include typography.f12w500;
+    color: colors.$gray-primary;
+    height: 52px;
+    border-bottom: 1px solid colors.$gray-2;
+  }
+
+  td.mat-mdc-cell {
+    @include typography.f14w400;
+    color: colors.$black-primary;
+    height: 52px;
+    border-bottom: 1px solid colors.$gray-2;
+  }
+
+  th .header-checkbox {
+    mat-checkbox.mat-mdc-checkbox {
+
+      .mdc-checkbox__background {
+        border: 1px solid colors.$gray-2;
+        width: 16px;
+        height: 16px;
+      }
+
+      .mdc-label {
+        @include typography.f12w500;
+        color: colors.$gray-primary;
+      }
+    }
+  }
+
+  td .cell-checkbox {
+    mat-checkbox.mat-mdc-checkbox {
+
+      .mdc-checkbox__background {
+        border: 1px solid colors.$black-primary;
+        width: 16px;
+        height: 16px;
+      }
+
+      .mdc-label {
+        @include typography.f14w400;
+        color: colors.$black-primary;
+      }
+    }
+  }
+
+  td .cell-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+mat-paginator.mat-mdc-paginator {
+  background: #ffffff;
+  box-shadow: 10px 10px 20px -5px #00000014, -10px 10px 20px -5px #00000014;
+  height: 54px;
+  color: colors.$gray-primary;
+
+  .mat-mdc-select-trigger {
+    color: colors.$black-primary;
+    fill: colors.$black-primary;
+    stroke: colors.$black-primary;
+  }
+
+  .mat-mdc-select-panel.mdc-menu-surface.mdc-menu-surface--open.mat-select-panel-animations-enabled {
+    background: #ffffff;
+
+    .mat-mdc-option.mdc-list-item {
+      color: colors.$black-primary;
+    }
+  }
+
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-paginator-navigation-first,
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-paginator-navigation-last,
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-paginator-navigation-next,
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-paginator-navigation-previous {
+
+    svg {
+      fill: colors.$black-primary;
+    }
+  }
+
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-button-disabled.mat-mdc-paginator-navigation-first,
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-button-disabled.mat-mdc-paginator-navigation-last,
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-button-disabled.mat-mdc-paginator-navigation-next,
+  .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base.mat-mdc-button-disabled.mat-mdc-paginator-navigation-previous {
+
+    svg {
+      fill: colors.$gray-primary
+    }
+  }
+}
+
+

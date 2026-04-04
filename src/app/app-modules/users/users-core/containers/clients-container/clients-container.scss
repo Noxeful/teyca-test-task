@@ -1,0 +1,66 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+.clients-container {
+  box-sizing: border-box;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+
+  .clients-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+
+    &__text {
+      @include typography.f26w700;
+      color: colors.$black-primary;
+      height: 24px;
+    }
+
+    &__description {
+      @include typography.f14w500;
+      line-height: 150%;
+      color: colors.$gray-primary;
+      height: 31px;
+    }
+  }
+
+  .clients-search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+
+    button.mdc-button.button {
+      @include typography.f14w600;
+      padding: 2px 4px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 172px;
+
+      mat-icon.mat-icon {
+        order: 2;
+        margin: 0;
+        height: 24px;
+        width: 24px;
+        top: 2px;
+      }
+    }
+  }
+
+  .clients-table-container {
+    width: 100%;
+  }
+}

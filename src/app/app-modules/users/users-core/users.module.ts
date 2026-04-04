@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@material/material.module';
 import { services } from '@users/users-core/services';
 import { UsersRoutingModule } from '@users/users-routing.module';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [...containers, ...components],
-  imports: [CommonModule, MaterialModule, UsersRoutingModule],
+  imports: [CommonModule, MaterialModule, UsersRoutingModule, SharedModule],
   providers:[...services],
   exports: [],
 })

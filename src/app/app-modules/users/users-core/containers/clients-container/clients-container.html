@@ -1,1 +1,25 @@
-<p>clients-container works!</p>
+<div class="clients-container">
+
+  <div class="clients-header-container">
+
+    <div class="clients-header-container__text">
+      Таблица клиентов
+    </div>
+    <div class="clients-header-container__description">
+      В этом разделе у вас есть возможность отправлять рассылки, а также редактировать информацию о ваших клиентах.
+    </div>
+  </div>
+
+  <div class="clients-search-container">
+    <teyca-search [placeholder]="'Поиск по номеру телефона'" (search)="onSearch($event)"></teyca-search>
+
+    <button mat-flat-button color="accent" class="button" type="button">
+      <span>Отправить Push</span>
+      <mat-icon svgIcon="push"></mat-icon>
+    </button>
+  </div>
+
+  <div class="clients-table-container">
+    <clients-table [dataSource]="usersStore.users()" [tableMeta]="usersStore.tableMeta()" (pageEvent)="onPageEvent($event)"></clients-table>
+  </div>
+</div>
