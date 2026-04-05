@@ -20,6 +20,7 @@ export class IconRegistryService {
     { name: 'download', path: 'assets/icons/clients/download.svg' },
     { name: 'push', path: 'assets/icons/clients/push.svg' },
     { name: 'telegram', path: 'assets/icons/clients/telegram.svg' },
+    { name: 'close', path: 'assets/icons/clients/close.svg' },
   ];
 
   constructor(

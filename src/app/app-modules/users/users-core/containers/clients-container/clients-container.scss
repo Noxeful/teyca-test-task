@@ -58,6 +58,11 @@
         top: 2px;
       }
     }
+
+    ::ng-deep .mdc-button.mat-mdc-button-disabled {
+      background-color: colors.$gray-4 !important;
+      color: #2c3e2c !important;
+    }
   }
 
   .clients-table-container {

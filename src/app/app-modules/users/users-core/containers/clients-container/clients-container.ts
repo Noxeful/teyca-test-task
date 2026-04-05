@@ -6,8 +6,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { UsersStore } from '@users/users-store/users-store';
-import { UsersRequestModel } from '@users/users-core/models/users-state-model';
+import { UsersRequestModel, UserTableModel } from '@users/users-core/models/users-state-model';
 import { PageEvent } from '@angular/material/paginator';
+import { ClientPushModalStore } from '@users/users-store/client-push-modal-store';
 
 @Component({
   selector: 'clients-container',
@@ -18,9 +19,11 @@ import { PageEvent } from '@angular/material/paginator';
 })
 export class ClientsContainer implements OnInit {
   readonly usersStore = inject(UsersStore);
+  readonly clientPushModalStore = inject(ClientPushModalStore);
   private cdRef: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   public usersRequest: UsersRequestModel;
+  public selectedUsers: UserTableModel[] = [];
 
   constructor() {
     this.usersRequest = {
@@ -31,7 +34,13 @@ export class ClientsContainer implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.getUsers(this.usersRequest)
+    this.getUsers(this.usersRequest);
+  }
+
+  public openPushModal(event: MouseEvent): void {
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+    this.clientPushModalStore.openClientPushModal(this.selectedUsers);
   }
 
   public onSearch(value: string | undefined): void {
@@ -41,12 +50,17 @@ export class ClientsContainer implements OnInit {
   }
 
   public onPageEvent(event: PageEvent): void {
-    this.usersRequest = {...this.usersRequest, offset: event.pageIndex, limit: event.pageSize};
+    this.usersRequest = { ...this.usersRequest, offset: event.pageIndex, limit: event.pageSize };
     this.getUsers({ ...this.usersRequest, offset: event.pageIndex, limit: event.pageSize });
+    this.cdRef.markForCheck();
+  }
+
+  public onSelectionChange(selectedUsers: UserTableModel[]): void {
+    this.selectedUsers = selectedUsers;
     this.cdRef.markForCheck();
   }
 
   public getUsers(request: UsersRequestModel): void {
     this.usersStore.getUsers(request);
-  };
+  }
 }

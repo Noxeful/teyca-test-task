@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatCheckbox } from '@angular/material/checkbox';
+import { MatSelect } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { MatCheckbox } from '@angular/material/checkbox';
     MatInputModule,
     MatTabsModule,
     MatCheckbox,
+    MatSelect,
+    MatDatepickerModule,
   ],
   exports: [
     MatButtonModule,
@@ -28,6 +32,8 @@ import { MatCheckbox } from '@angular/material/checkbox';
     MatInputModule,
     MatTabsModule,
     MatCheckbox,
+    MatSelect,
+    MatDatepickerModule,
   ],
 })
 export class MaterialModule {}

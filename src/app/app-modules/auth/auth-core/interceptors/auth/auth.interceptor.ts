@@ -40,8 +40,6 @@ export class AuthInterceptor implements HttpInterceptor {
       }
     );
 
-    console.log(token);
-
 
     return next.handle(authReq).pipe(catchError(this.handleError));
   }

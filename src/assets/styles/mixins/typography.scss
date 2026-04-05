@@ -59,6 +59,26 @@
   text-align: center;
 }
 
+// font size 16px
+
+@mixin f16w700 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+
+//font size 18px
+
+@mixin f18w700 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
 //font size 26px
 
 @mixin f26w700 {

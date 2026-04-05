@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserTableModel } from '@users/users-core/models/users-state-model';
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +23,25 @@ export class UsersService {
       .set('offset', offset);
 
     return this.http.get(url, { params });
+  }
+
+  public sendPush(
+    token: string | null,
+    clients: UserTableModel[],
+    date_start: string | null,
+    text: string,
+  ): Observable<any> {
+    const url: string = `https://api.teyca.ru/v1/${token}/message/push`;
+
+    let body: { clients: UserTableModel[]; push_message: string; date_start?: string } = {
+      clients,
+      push_message: text,
+    };
+
+    if (date_start) {
+      body = {...body, date_start};
+    }
+
+    return this.http.post(url, body);
   }
 }

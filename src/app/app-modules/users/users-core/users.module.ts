@@ -6,12 +6,19 @@ import { MaterialModule } from '@material/material.module';
 import { services } from '@users/users-core/services';
 import { UsersRoutingModule } from '@users/users-routing.module';
 import { SharedModule } from '@shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [...containers, ...components],
-  imports: [CommonModule, MaterialModule, UsersRoutingModule, SharedModule],
-  providers:[...services],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    UsersRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
+  providers: [...services],
   exports: [],
 })
-
 export class UsersModule {}

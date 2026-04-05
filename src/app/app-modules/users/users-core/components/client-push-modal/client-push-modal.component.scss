@@ -1,0 +1,177 @@
+@use "assets/styles/mixins/typography" as typography;
+@use "assets/styles/mixins/colors" as colors;
+
+.client-push-modal-container {
+  background: #ffffff;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .client-push-modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+
+    mat.mat-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .mat-icon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .client-push-modal-header {
+    height: 23px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+      @include typography.f18w700;
+      color: colors.$black-primary;
+    }
+  }
+
+  .client-push-modal-body {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+
+    &__text-input {
+      height: 110px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 8px;
+
+      .text-input-header {
+        @include typography.f16w700;
+        color: colors.$black-primary;
+        height: 22px;
+      }
+
+      .text-input-field {
+        height: 80px;
+        width: 100%;
+      }
+    }
+
+    &__preview {
+      height: 130px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 8px;
+
+      .preview-header {
+        @include typography.f16w700;
+        color: colors.$black-primary;
+        height: 22px;
+      }
+
+      .preview-body {
+        height: 100px;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid colors.$gray-5;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 16px;
+        box-sizing: border-box;
+        gap: 12px;
+
+        &__image {
+          flex: 1 1 auto;
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 5px;
+          width: 100%;
+          align-self: flex-start;
+
+          .name {
+            @include typography.f14w700;
+            line-height: 150%;
+            color: colors.$black-primary;
+          }
+
+          .message {
+            @include typography.f14w500;
+            line-height: 150%;
+            color: colors.$black-primary;
+            height: 42px;
+            width: 100%;
+            text-align: start;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
+
+    &__date {
+      height: 70px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 8px;
+
+      .push-date-header {
+        @include typography.f16w700;
+        line-height: 100%;
+        height: 22px;
+        color: colors.$black-primary;
+      }
+
+      .push-date-select {
+        height: 40px;
+        width: 100%;
+      }
+    }
+  }
+
+  .client-push-modal-footer {
+    margin-top: 20px;
+    height: 317px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+    gap: 10px;
+  }
+}

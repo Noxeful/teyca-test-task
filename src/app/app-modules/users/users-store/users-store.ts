@@ -1,4 +1,4 @@
-import { UsersStateModel, UsersRequestModel } from '@users/users-core/models/users-state-model';
+import { UsersStateModel, UsersRequestModel, UserTableModel } from '@users/users-core/models/users-state-model';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
@@ -17,17 +17,20 @@ export const UsersStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
   withMethods(
-    (
-      store,
-      authStore = inject(AuthStore),
-      usersService: UsersService = inject(UsersService),
-    ) => ({
+    (store, authStore = inject(AuthStore), usersService: UsersService = inject(UsersService)) => ({
       getUsers: rxMethod<UsersRequestModel>(
         pipe(
           tap(() => patchState(store, { loading: true, error: null })),
           switchMap(
             ({ search, limit, offset }: UsersRequestModel): Observable<any> =>
-              from(usersService.getClientsTable(authStore.token(), search ? search : '', limit, offset)).pipe(
+              from(
+                usersService.getClientsTable(
+                  authStore.token(),
+                  search ? search : '',
+                  limit,
+                  offset,
+                ),
+              ).pipe(
                 tap({
                   next: (data: any) => {
                     patchState(store, { users: data.passes, tableMeta: data.meta, loading: false });
@@ -40,6 +43,29 @@ export const UsersStore = signalStore(
                       error: error.message,
                       loading: false,
                     });
+                  },
+                }),
+              ),
+          ),
+          catchError(() => {
+            return of(null);
+          }),
+        ),
+      ),
+      sendPush: rxMethod<{ clients: UserTableModel[]; date_start: string | null; text: string }>(
+        pipe(
+          switchMap(
+            ({ clients, date_start, text }: any): Observable<any> =>
+              from(
+                usersService.sendPush(authStore.token(), clients, date_start, text),
+              ).pipe(
+                tap({
+                  next: (data: any) => {
+
+
+                  },
+                  error: (error) => {
+                    console.error(error);
                   },
                 }),
               ),

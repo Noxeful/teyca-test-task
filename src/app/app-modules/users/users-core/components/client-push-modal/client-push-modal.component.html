@@ -1,0 +1,78 @@
+<div class="client-push-modal-container">
+
+  <div class="client-push-modal-close">
+    <mat-icon svgIcon="close" (click)="closeModal()"></mat-icon>
+  </div>
+
+  <div class="client-push-modal-header">
+    <div class="client-push-modal-header__text">
+      Новая Push-рассылка
+    </div>
+  </div>
+
+  <div class="client-push-modal-body">
+    <div class="client-push-modal-body__text-input">
+
+      <div class="text-input-header">
+        Текст сообщения
+      </div>
+      <div class="text-input-field">
+        <mat-form-field class="teyca-textarea">
+          <textarea matInput
+                    rows="4"
+                    class="text-input-field__text-area"
+                    style="resize: none"
+                    [(ngModel)]="previewText"
+          >
+          </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="client-push-modal-body__preview">
+      <div class="preview-header">
+        Превью
+      </div>
+      <div class="preview-body">
+        <div class="preview-body__image">
+          <img src="assets/images/folder.png" height="38" width="38" />
+        </div>
+        <div class="preview-body__content">
+          <div class="name">
+            {{ data.userName }}
+          </div>
+          <div class="message">
+            {{ previewText }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="client-push-modal-body__date">
+      <div class="push-date-header">
+        Дата отправки рассылки
+      </div>
+
+      <div class="push-date-select teyca-calendar-container">
+        <mat-form-field>
+          <input matInput
+                 placeholder="Сейчас"
+                 readonly
+                 [matDatepicker]="picker"
+                 [min]="today"
+                 (dateChange)="onDateChange($event)"
+          >
+          <mat-datepicker-toggle matIconSuffix [for]="picker" >
+            <mat-icon matDatepickerToggleIcon>arrow_drop_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker [startAt]="today"></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="client-push-modal-footer">
+    <button mat-button color="accent" (click)="closeModal()">Отмена</button>
+    <button mat-button color="primary" (click)="sendPush()">Отправить</button>
+  </div>
+</div>

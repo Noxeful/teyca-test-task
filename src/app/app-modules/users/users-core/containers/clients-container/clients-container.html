@@ -13,13 +13,15 @@
   <div class="clients-search-container">
     <teyca-search [placeholder]="'Поиск по номеру телефона'" (search)="onSearch($event)"></teyca-search>
 
-    <button mat-flat-button color="accent" class="button" type="button">
+    <button mat-flat-button color="accent" class="button" type="button" [disabled]="selectedUsers.length < 1"
+            (click)="openPushModal($event)">
       <span>Отправить Push</span>
       <mat-icon svgIcon="push"></mat-icon>
     </button>
   </div>
 
   <div class="clients-table-container">
-    <clients-table [dataSource]="usersStore.users()" [tableMeta]="usersStore.tableMeta()" (pageEvent)="onPageEvent($event)"></clients-table>
+    <clients-table [dataSource]="usersStore.users()" [tableMeta]="usersStore.tableMeta()"
+                   (pageEvent)="onPageEvent($event)" (selectionChange)="onSelectionChange($event)"></clients-table>
   </div>
 </div>
